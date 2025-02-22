@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities & Opportunities in Uk</title>
+    <style>
+         body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f9e6f7, #f1c0d6);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #d15b87;
+    font-size: 28px;
+    margin-bottom: 65px; /* Space after the heading */
+}
+
+.university-info {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px; /* Increased margin between university chatboxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.university-info:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.info{
+    font-size: 18px;
+    text-align: center;
+    color: #0c033a;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.university-info h3 {
+    color: #d15b87;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.university-description {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.university-details {
+    display: none;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.university-details.show {
+    display: block;
+    opacity: 1;
+}
+
+.university-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+.university-details li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #d15b87;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #b74a6b;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Footer styling */
+footer {
+    background-color: #d15b87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+footer a {
+    color: #f9e6f7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <h2>Top Universities in the United Kingdom</h2>
+
+    <!-- University 1: Oxford University -->
+    <div class="university-info">
+        <h3>Oxford University</h3>
+        <p class="university-description">Oxford University is among the top-rank universities in the world. The university offers quality undergraduate and graduate courses in multiple specializations for international students. Some popular UG courses study areas such as Biology, Chemistry, Computer Science, Mathematics, Law, etc., and popular graduate courses study areas such as Fine Arts, Law, and Finance, Business Administration, etc. Oxford's popular programs are MBA, MSc in CS, MSc in Financial Economics, LLM, etc.
+        </p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('harvardDetails')">See More</button>
+        </div>
+        <div id="harvardDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> Oxford offers various scholarships, including need-based and merit-based options for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Select your desired undergraduate or graduate course.
+                        </li>
+                        <li>Ensure you meet the specific academic requirements for your chosen course, which may include predicted or achieved grades in relevant subjects.
+                        </li>
+                        <li>If English is not your first language, you'll need to demonstrate proficiency through tests like IELTS or TOEFL.
+                        </li>
+                        <li>Craft a compelling personal statement that highlights your academic interests, motivations, and suitability for the course.
+                        </li>
+                        <li>Obtain a strong academic reference from a teacher or tutor familiar with your work.
+                        </li>
+                        <li>Many courses require you to take subject-specific admissions tests, such as the BMAT for Medicine or the TSA for Humanities.
+                        </li>
+                        <li>For detailed application information, visit the <a href=" https://www.ox.ac.uk/admissions/undergraduate" target="_blank" style="color: #421dff; text-decoration: underline;">Universities Admissions Centre (UAC)</a>.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Undergraduate: Typically requires excellent academic performance at the secondary or pre-university level. This often includes high grades in relevant subjects (e.g., A-levels in the UK).
+                        </li>
+                        <li>Graduate: Usually requires a strong undergraduate degree (e.g., a 2:1 or higher in the UK) in a relevant field.
+                        </li>
+                        <li>A 7.0 IELTS band score is required to demonstrate English proficiency.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> The application is currently live for entry in 2025-26</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 2: Cambridge University -->
+    <div class="university-info">
+        <h3>Cambridge University</h3>
+        <p class="university-description">Among the top 5 universities in the UK and ranks in the top 5 universities worldwide. Currently, 389 Indian students call Cambridge their home.Academic divisions at Cambridge include Arts & Humanities, Biological Sciences, Clinical Medicine, Humanities and Social Sciences, Physical Sciences, and Technology. As per the historic data of Cambridge alumni collated from the web, some of the popular subjects and streams of study at the university include English Language & Literature, Economics, Business Administration & Management, Law, Business, Commerce, and more.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('stanfordDetails')">See More</button>
+        </div>
+        <div id="stanfordDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> Cambridge offers a variety of scholarships, including merit-based, need-based, and specific departmental awards.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Select your desired undergraduate or graduate course.
+                        </li>
+                        <li>Ensure you meet the specific academic requirements for your chosen course, which may include predicted or achieved grades in relevant subjects.
+                        </li>
+                        <li>If English is not your first language, you'll need to demonstrate proficiency through tests like IELTS or TOEFL.
+                        </li>
+                        <li>Craft a compelling personal statement that highlights your academic interests, motivations, and suitability for the course.
+                        </li>
+                        <li>Obtain a strong academic reference from a teacher or tutor familiar with your work.
+                        </li>
+                        <li>Many courses require you to take subject-specific admissions tests, such as the BMAT for Medicine or the TSA for Humanities.
+                        </li>
+                        <li>For detailed undergraduate information, visit the <a href="https://www.undergraduate.study.cam.ac.uk/apply" target="_blank" style="color: #421dff; text-decoration: underline;">Undergraduate Programs</a>.
+                        </li>
+                        <li>For detailed Graduate information, visit the <a href=" https://www.graduate.study.cam.ac.uk/apply" target="_blank" style="color: #421dff; text-decoration: underline;">Graduate Programs</a>.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Undergraduate course - A-levels in the UK
+                        </li>
+                        <li>Graduate -  an overall grade of 70% or CGPA 7.3 or higher.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong>
+                <ul>
+                    <li>Undergraduate applications for 2025 entry at Cambridge University will open in Early-Sep, 2024
+                    </li>
+                    <li>UCAS application deadline is Jan-End, 2025</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 3: Imperial College London -->
+    <div class="university-info">
+        <h3>Imperial College London</h3>
+        <p class="university-description">Imperial College London offers a vast number of courses at the undergraduate and graduate levels. With a world-class reputation in Science, Engineering and Business.Popular streams of study at the university include Mathematics, Physics, Chemistry, Mechanical Engineering, Medicine, and more.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('mitDetails')">See More</button>
+        </div>
+        <div id="mitDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> ICL provides a range of scholarships, including merit-based, need-based, and research funding for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Carefully research the specific undergraduate or graduate courses that interest you at Imperial College London.</li>
+                        <li>Ensure you meet the basic eligibility criteria for your chosen course, including academic requirements and English language proficiency.
+                        </li>
+                        <li>You can typically apply for up to five courses on a single UCAS application.
+                        </li>
+                        <li>Craft a compelling personal statement that highlights your academic interests, motivations, and suitability for the course.
+                        </li>
+                        <li>Obtain a strong academic reference from a teacher or tutor familiar with your work.
+                        </li>
+                        <li>Submit any required supporting documents, such as transcripts, certificates, and proof of English language proficiency.
+                        </li>
+                        <li>Some courses may require you to take specific admissions tests, such as the Graduate Record Examination (GRE) for certain graduate programs.
+                        </li>
+                        <li>For detailed undergraduate information, visit the <a href="https://www.imperial.ac.uk/study/apply/undergraduate/" target="_blank" style="color: #421dff; text-decoration: underline;">Undergraduate Programs</a>.
+                        </li>
+                        <li>For detailed Graduate information, visit the <a href="https://www.imperial.ac.uk/study/apply/postgraduate-taught/" target="_blank" style="color: #421dff; text-decoration: underline;">Graduate Programs</a>.
+                        </li>
+                        <li><strong>Status:</strong>
+                            <ul>
+                                <li>Undergraduate Programs: Jan-End, 2025
+                                </li>
+                                <li>Graduate Programs: Jun 30, 2025</li>
+                            </ul>
+                            </li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Undergraduate - A-Levels in the UK.
+                        </li>
+                        <li>Graduate - an overall grade of 70% or CGPA 7.3 or higher.
+                        </li>
+                        <li>IELTS score - Minimum score of 6.8 and a standard score of 7.0 and higher.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> Applications for undergraduate programs are accepted in the fall, with deadlines in January. Graduate applications are department-specific.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 4: London School of Economics -->
+    <div class="university-info">
+        <h3>London School of Economics</h3>
+        <p class="university-description">The London School of Economics and Political Science (LSE) is a prestigious public university located in London, England, founded in 1895. It is renowned for its rigorous focus on social sciences, particularly economics, politics, law, and international relations. LSE consistently ranks among the top universities in the world and attracts students and faculty from across the globe. Its influential research and academic excellence have made it a hub for policy makers, business leaders, and scholars.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('berkeleyDetails')">See More</button>
+        </div>
+        <div id="berkeleyDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> LSEC Berkeley offers a variety of scholarships, including merit-based scholarships, financial aid, and fellowships for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Carefully research the specific undergraduate or graduate courses that interest you at LSE.
+                        </li>
+                        <li>Ensure you meet the basic eligibility criteria for your chosen course, including academic requirements and English language proficiency.
+                        </li>
+                        <li>Craft a compelling personal statement that highlights your academic interests, motivations, and suitability for the course.
+                        </li>
+                        <li>Obtain a strong academic reference from a teacher or tutor familiar with your work.
+                        </li>
+                        <li>Submit any required supporting documents, such as transcripts, certificates, and proof of English language proficiency.
+                        </li>
+                        <li>Interviews are not typically conducted for undergraduate applications at LSE.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> A minimum GPA of 3.5/4.0, standardized test scores (if applicable), and proof of English proficiency (TOEFL/IELTS).</li>
+                <li><strong>Status:</strong> Applications are open for fall intake, with deadlines in November for international students.</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="info">For further details and information kindly chat with our AI assisstant</p>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 United Kingdom Universities & Study Opportunities. All rights reserved. | 
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p>Contact us: <a href="mailto:contact@UnitedKingdomuniversities.com">contact@UnitedKingdomuniversities.com</a> | 
+            Phone: <a href="tel:+61412345678">+61 412 345 678</a></p>
+    </footer>
+
+    <script>
+        function toggleDetails(universityId) {
+            const details = document.getElementById(universityId);
+            const button = details.previousElementSibling.children[0];
+            
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                details.classList.add('show');
+                button.innerText = "See Less";
+            } else {
+                details.style.display = "none";
+                details.classList.remove('show');
+                button.innerText = "See More";
+            }
+        }
+    </script>
+
+</body>
+</html>
