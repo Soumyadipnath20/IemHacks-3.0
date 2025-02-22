@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial,sans-serif';
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            transition: background-color 0.5s ease-in-out; /* Smooth transition on background change */
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Arial,sans-serif';
+            font-size: 50px;
+            margin-top: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-out; /* Added animation to the header */
+        }
+
+        h2, h3 {
+            font-family: 'Arial,sans-serif';
+            font-size: 35px;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-out; /* Fade-in effect for h2, h3 */
+        }
+
+        p {
+            font-family: 'Arial,sans-serif';
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Center the Services List */
+        ul {
+            list-style-type: disc;
+            padding: 0;
+            text-align: center;
+            margin-left: 0;
+            display: inline-block; /* Makes the list an inline block so it's centered */
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1s forwards; /* Fade-in after a slight delay */
+        }
+
+        ul li {
+            font-size: 18px;
+            margin: 10px;
+            color: #333;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff9999;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #b85e90;  /* Changed to pink */
+            color: white;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out; /* Slide-in effect for header */
+        }
+
+        /* Navbar - Center Align the Text */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition */
+        }
+
+        nav li a:hover {
+            background-color: #cf71a6;
+            transform: scale(1.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1s forwards; /* Fade-in effect for sections */
+        }
+
+        .destination {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #abe1f2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Ensure the destinations are clickable */
+        }
+
+        .destinations-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .destination h3 {
+            font-size: 24px;
+            color: #b41b6f;
+        }
+
+        .destination p {
+            font-size: 16px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #2e6ca5;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition */
+        }
+
+        button:hover {
+            background-color: #4a8bc2;
+            transform: scale(1.03);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #b85e90;  /* Changed to pink */
+            color: white; /* Footer text color changed to white */
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            animation: fadeIn 2s ease-out 1.5s forwards; /* Fade-in effect for footer */
+        }
+
+        footer p {
+            color: white; /* Set the color of the copyright text to white */
+        }
+
+
+           /* Feedback Form Styles */
+        .feedback-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 60%;
+            animation: fadeIn 2s ease-out 1s forwards;
+            overflow: hidden;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea,
+        .feedback-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.circle:hover {
+  background-color: #ffcc00; /* Highlight on hover */
+  border-color: #ffcc00; /* Highlight border color */
+}
+
+#apply{
+    transform: scale(1.05);
+}
+
+.selected {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: white;
+}
+
+#selected-rating {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffcc00;
+}
+
+
+
+
+        .feedback-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Feedback Type Dropdown */
+        .feedback-form select {
+            cursor: pointer;
+        }
+
+        .feedback-form button {
+            background-color: #b85e90;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .feedback-form button:hover {
+            background-color: #cf71a6;
+            transform: scale(0.95); /* Shrinks the button on hover */
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Image Styling */
+        #home img {
+            width: 70%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 2s ease-out; /* Zoom-in effect on the image */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Additional Responsive Design */
+        @media (max-width: 768px) {
+            .destinations-container {
+                flex-direction: column;
+            }
+
+            h2, h3, p {
+                font-size: 1.2rem;
+            }
+
+            header h1 {
+                font-size: 40px;
+            }
+
+            nav li a {
+                padding: 10px 15px;
+            }
+
+            button {
+                width: 80%;
+                padding: 12px 24px;
+            }
+        }
+
+        /* Centering the SOP & LOR buttons */
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .button-container a {
+            margin: 10px;
+        }
+
+                /* Show Chatbot */
+                .show-chatbot {
+            display: block; /* Show the chatbot when needed */
+        }
+        .rating-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .star {
+      font-size: 50px;
+      color: #d3d3d3;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star:hover,
+    .star.selected {
+      color: gold;
+    }
+
+    #rating-value {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Study Abroad Connect</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#apply">Apply</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="https://cdn.leverageedu.com/blog/wp-content/uploads/2020/05/11231006/Study-Abroad.png" alt="Study Abroad Image">
+        <h2>Your Journey Starts Here</h2>
+        <p>Discover the world, one study abroad program at a time.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We help students like you find the perfect study abroad program.</p>
+        <p>Our services include:</p>
+        <ul>
+            <li>Shortlisting University</li>
+            <li>Application assistance</li>
+            <li>Visa guidance</li>
+            <li>Accommodation support</li>
+        </ul>
+    </section>
+
+    <!-- Container for SOP & LOR buttons -->
+    <div class="button-container">
+        <a href="sop.html"><button>Generate your SOP</button></a>
+        <a href="lor.html"><button>Generate your LOR</button></a>
+    </div>
+
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destinations-container">
+            <div class="destination">
+                <a href="uk.html">
+                    <h3>United Kingdom</h3>
+                    <p>Explore world-class universities and historical cities.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="australia.html">
+                    <h3>Australia</h3>
+                    <p>Study in a beautiful country with diverse culture.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="usa.html">
+                    <h3>United States of America</h3>
+                    <p>Experience the wide variety of cultures, lifestyles, and cities.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="germany.html">
+                    <h3>Germany</h3>
+                    <p>High quality education and diverse opportunities.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="france.html">
+                    <h3>France</h3>
+                    <p>Study in a city with a rich history of arts and communication.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="ireland.html">
+                    <h3>Ireland</h3>
+                    <p>Study in a country renowned for friendliness and safety.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply">
+        <h2>Kickstart your career with our guidance</h2>
+        <p>Ready to embark on your study abroad adventure? Apply today!</p>
+        <a href="apply.html"><button>Apply Now</button></a>
+        
+        <!-- AI Chatbot Button -->
+        <a href="javascript:void(0);"><button id="chatbotButton">AI Assistant</button></a>
+    </section>
+
+   
+    
+<!-- Feedback Form Section -->
+<section id="feedback">
+    <h2>We Value Your Feedback</h2>
+    <p>Please share your thoughts with us!</p>
+    <form class="feedback-form" id="feedback-form">
+        
+        <div class="form-row">
+            <label for="useful-page">Is this page useful?</label>
+            <select id="useful-page" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="visit-reason">What was the main reason for your visit to our website today?</label>
+            <select id="visit-reason" required>
+                <option value="" disabled selected>Please choose one option only</option>
+                <option value="Course Information">To find out more information about and/or apply for a course.</option>
+                <option value="University Life">To find out more about university life (accommodation, support, social, travel, etc.)</option>
+                <option value="Funding and Scholarships">To find out more information about fees, funding, and scholarships.</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="satisfaction">How satisfied were you with your experience on our website today?</label>
+            <select id="satisfaction" required>
+                <option value="" disabled selected>Please choose 1 option</option>
+                <option value="Very Satisfied">Very satisfied</option>
+                <option value="Satisfied">Satisfied</option>
+                <option value="Neither Satisfied Nor Dissatisfied">Neither satisfied nor dissatisfied</option>
+                <option value="Dissatisfied">Dissatisfied</option>
+                <option value="Very Dissatisfied">Very dissatisfied</option>
+            </select>
+        </div>
+        <!-- Text before the rating -->
+        <p class="rating-text">Rate us on a scale of 1 to 5:</p>
+        <div class="rating">
+            <span class="circle" data-value="1">1</span>
+            <span class="circle" data-value="2">2</span>
+            <span class="circle" data-value="3">3</span>
+            <span class="circle" data-value="4">4</span>
+            <span class="circle" data-value="5">5</span>
+          </div>
+          <p>Your Rating: <span id="selected-rating">None</span></p>
+          
+       <script>
+        // Select all the circles and the rating display element
+const circles = document.querySelectorAll('.circle');
+const ratingText = document.getElementById('selected-rating');
+
+// Add event listener to each circle
+circles.forEach(circle => {
+    circle.addEventListener('click', () => {
+        // Remove 'selected' class from all circles
+        circles.forEach(c => c.classList.remove('selected'));
+        
+        // Add 'selected' class to the clicked circle
+        circle.classList.add('selected');
+        
+        // Display the rating number
+        ratingText.textContent = circle.getAttribute('data-value');
+    });
+});
+       </script>
+          
+<script>
+   // JavaScript to handle redirection on button click
+   document.getElementById('chatbotButton').addEventListener('click', function() {
+            window.location.href = 'https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/12/12/10/20241212100622-P19I32ET.json';
+        });
+
+</script>          
+        
+
+        
+        <div class="form-row">
+            <label for="reason">Why did you give this rating?</label>
+            <textarea id="reason" placeholder="Help us to make this site better by telling us what you think about this page." required></textarea>
+        </div>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</section>
+
+
+
+     <!-- Footer Section -->
+     <footer>
+        <p>&copy; 2025 Study Abroad. All rights reserved. | 
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p>Contact us: <a href="mailto:contact@universities.com">contact@universities.com</a> | 
+            Phone: <a href="tel:+61412345678">+91 8648721563</a></p>
+    </footer>
+    
+</body>
+</html>
