@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities & Opportunities in USA</title>
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f9e6f7, #f1c0d6);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #d15b87;
+    font-size: 28px;
+    margin-bottom: 65px; /* Increased space after the heading */
+}
+
+.info{
+    font-size: 18px;
+    text-align: center;
+    color: #0c033a;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.university-info {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px; /* Increased margin between university chatboxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.university-info:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.university-info h3 {
+    color: #d15b87;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.university-description {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.university-details {
+    display: none;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.university-details.show {
+    display: block;
+    opacity: 1;
+}
+
+.university-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+.university-details li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #d15b87;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #b74a6b;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Footer styling */
+footer {
+    background-color: #d15b87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+footer a {
+    color: #f9e6f7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <h2>Top Universities in the USA</h2>
+
+    <!-- University 1: Harvard University -->
+    <div class="university-info">
+        <h3>Harvard University</h3>
+        <p class="university-description">Harvard University, located in Cambridge, Massachusetts, is one of the oldest and most prestigious universities in the world, founded in 1636. Known for its rigorous academic programs and distinguished faculty, Harvard is a leader in various fields such as law, medicine, business, and the humanities. The university has a strong emphasis on research, critical thinking, and producing global leaders across disciplines. Harvard’s diverse student body, extensive resources, and global reputation make it one of the most sought-after institutions for higher education.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('harvardDetails')">See More</button>
+        </div>
+        <div id="harvardDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> Harvard offers various scholarships, including need-based and merit-based options for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Choose the Application Platform: Harvard accepts applications through either the Common Application or the Coalition Application.
+                        </li>
+                        <li>Create an Account and Start the Application: Fill out the general application information, including personal details, family background, and educational history.
+                        </li>
+                        <li>Complete the Harvard Supplement: This section includes essays specific to Harvard, allowing you to showcase your personality, interests, and reasons for applying.
+                        </li>
+                        <li>School Report and Transcript: Your high school counselor will submit your academic record.
+                        </li>
+                        <li>Teacher Recommendations: Two teachers who know you well will submit letters of recommendation.
+                        </li>
+                        <li>Standardized Test Scores: SAT or ACT scores are required.
+                        </li>
+                        <li>Fee or Fee Waiver: Pay the application fee ($85) or request a fee waiver if needed.
+                        </li>
+                        <li>For detailed application information, visit the <a href="https://college.harvard.edu/admissions/apply" target="_blank" style="color: #d15b87; text-decoration: underline;">Universities Admissions Centre (UAC)</a>.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Academic Excellence: Harvard seeks students with strong academic records, demonstrating intellectual curiosity and a passion for learning.
+                        </li>
+                        <li>Extracurricular Involvement: Active participation in extracurricular activities, whether in academics, arts, sports, or community service, is highly valued.
+                        </li>
+                        <li>Leadership and Personal Qualities: Demonstrated leadership skills, initiative, and a commitment to personal growth are essential.
+                        </li>
+                        <li>Essay Quality: The essays in the Harvard Supplement should be well-written, insightful, and reflective of your unique personality and experiences.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> Applications for undergraduate programs open in the fall and are typically due in January. Graduate program deadlines vary by department.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 2: Stanford University -->
+    <div class="university-info">
+        <h3>Stanford University</h3>
+        <p class="university-description">Stanford University, located in Stanford, California, is one of the world’s leading research universities, known for its cutting-edge programs in technology, business, and engineering. Founded in 1885, Stanford is renowned for fostering innovation and entrepreneurship, particularly in Silicon Valley. The university offers a collaborative and interdisciplinary approach to learning, with a strong emphasis on research, leadership, and global impact. Stanford’s diverse academic community and commitment to academic excellence make it a top choice for students worldwide.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('stanfordDetails')">See More</button>
+        </div>
+        <div id="stanfordDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> Stanford offers a variety of scholarships, including merit-based, need-based, and specific departmental awards.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Stanford accepts applications through the Common Application or the Coalition Application. 
+                        </li>
+                        <li>Create an Account and Start the Application: Fill out the general application information, including personal details, family background, and educational history.
+                        </li>
+                        <li>Complete the Stanford Supplement: This section includes essays specific to Stanford, allowing you to showcase your personality, interests, and reasons for applying.
+                        </li>
+                        <li>School Report and Transcript: Your high school counselor will submit your academic record.
+                        </li>
+                        <li>Teacher Recommendations: Two teachers who know you well will submit letters of recommendation.
+                        </li>
+                        <li>Standardized Test Scores: SAT or ACT scores are required (optional for the 2023-2024 application cycle).
+                        </li>
+                        <li>Fee or Fee Waiver: Pay the application fee ($90) or request a fee waiver if needed.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Strong High School Record: A consistently high GPA in challenging coursework is essential.
+                        </li>
+                        <li>Standardized Test Scores: While optional for the 2023-2024 application cycle, submitting SAT or ACT scores can still strengthen your application.
+                        </li>
+                        <li>Coursework Rigor: Taking Advanced Placement (AP), International Baccalaureate (IB), or honors courses demonstrates academic ambition.
+                        </li>
+                        <li>Demonstrated Passion: Deep involvement in extracurricular activities, whether in academics, arts, sports, or community service, is highly valued.
+                        </li>
+                        <li>Leadership and Initiative: Demonstrating leadership roles and taking initiative in your pursuits is crucial.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> Applications for undergraduate programs are open in the fall, with deadlines in early January. Graduate applications vary by department.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 3: Massachusetts Institute of Technology (MIT) -->
+    <div class="university-info">
+        <h3>Massachusetts Institute of Technology (MIT)</h3>
+        <p class="university-description">The Massachusetts Institute of Technology (MIT), located in Cambridge, Massachusetts, is a world-renowned institution focused on innovation, technology, and scientific research. Founded in 1861, MIT is recognized globally for its leadership in fields such as engineering, computer science, economics, and robotics. The university is known for its rigorous academic programs, hands-on learning opportunities, and strong emphasis on solving real-world problems through research and entrepreneurship. MIT’s collaborative environment and commitment to excellence attract top-tier students and faculty from around the globe.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('mitDetails')">See More</button>
+        </div>
+        <div id="mitDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> MIT provides a range of scholarships, including merit-based, need-based, and research funding for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Create an MIT Account: Start by creating an account on the MIT Admissions Portal. This will be your central hub for the application process.</li>
+                        <li>Complete the Online Application: Fill out the online application form, providing details about your personal information, educational background, and extracurricular activities.
+                        </li>
+                        <li>School Report and Transcript: Your high school counselor will submit your academic record.
+                        </li>
+                        <li>Teacher Recommendations: Two teachers who know you well will submit letters of recommendation.
+                        </li>
+                        <li>Standardized Test Scores: SAT or ACT scores are required (optional for the 2023-2024 application cycle).
+                        </li>
+                        <li>Fee or Fee Waiver: Pay the application fee ($75) or request a fee waiver if needed.
+                        </li>
+                        <li>Write the MIT Essays: Craft compelling essays that showcase your personality, interests, and reasons for applying to MIT.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>Academic Excellence: MIT seeks students with exceptional academic records, demonstrating a strong work ethic and intellectual curiosity.
+                        </li>
+                        <li>Extracurricular Involvement: Active participation in extracurricular activities, whether in academics, arts, sports, or community service, is highly valued.
+                        </li>
+                        <li>Leadership and Personal Qualities: Demonstrated leadership skills, initiative, and a commitment to personal growth are essential.
+                        </li>
+                        <li>Essay Quality: The MIT essays should be well-written, insightful, and reflective of your unique personality and experience
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> Applications for undergraduate programs are accepted in the fall, with deadlines in January. Graduate applications are department-specific.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 4: University of California, Berkeley -->
+    <div class="university-info">
+        <h3>University of California, Berkeley</h3>
+        <p class="university-description">The University of California (UC) is a prestigious public university system in the United States, comprising ten campuses across the state. It is renowned for its academic excellence, research contributions, and diverse student body. UC campuses, such as UC Berkeley, UCLA, and UC San Diego, offer a wide range of undergraduate, graduate, and professional programs. The system is committed to public service, sustainability, and fostering innovation in various fields of study.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('berkeleyDetails')">See More</button>
+        </div>
+        <div id="berkeleyDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> UC Berkeley offers a variety of scholarships, including merit-based scholarships, financial aid, and fellowships for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Apply via the University of California application system.</li>
+                        <li>Submit academic transcripts, SAT/ACT scores (optional), personal statements, and letters of recommendation.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> A minimum GPA of 3.5/4.0, standardized test scores (if applicable), and proof of English proficiency (TOEFL/IELTS).</li>
+                <li><strong>Status:</strong> Applications are open for fall intake, with deadlines in November for international students.</li>
+            </ul>
+        </div>
+    </div>
+<!--AI Assisstant Section-->
+    <p class="info">For further details and information kindly chat with our AI assisstant</p>
+
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 USA Universities & Study Opportunities. All rights reserved. | 
+        <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    <p>Contact us: <a href="mailto:contact@usauniversities.com">contact@usauniversities.com</a> | 
+        Phone: <a href="tel:+61412345678">+61 412 345 678</a></p>
+</footer>
+
+    <script>
+        function toggleDetails(universityId) {
+            const details = document.getElementById(universityId);
+            const button = details.previousElementSibling.children[0];
+            
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                details.classList.add('show');
+                button.innerText = "See Less";
+            } else {
+                details.style.display = "none";
+                details.classList.remove('show');
+                button.innerText = "See More";
+            }
+        }
+    </script>
+
+</body>
+</html>
