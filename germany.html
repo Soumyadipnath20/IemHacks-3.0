@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities & Opportunities in Germany</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f9e6f7, #f1c0d6);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #d15b87;
+    font-size: 28px;
+    margin-bottom: 65px; /* Space after the heading */
+}
+
+.info{
+    font-size: 18px;
+    text-align: center;
+    color: #0c033a;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.university-info {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px; /* Increased margin between university chatboxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.university-info:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.university-info h3 {
+    color: #d15b87;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.university-description {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.university-details {
+    display: none;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.university-details.show {
+    display: block;
+    opacity: 1;
+}
+
+.university-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+.university-details li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #d15b87;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #b74a6b;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Footer styling */
+footer {
+    background-color: #d15b87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+footer a {
+    color: #f9e6f7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2>Top German Universities</h2>
+
+    <!-- University 1: Technical University of Munich (TUM) -->
+    <div class="university-info">
+        <h3>Technical University of Munich (TUM)</h3>
+        <p class="university-description">The Technical University of Munich (TUM) is a leading research university located in Munich, Germany, founded in 1868. Known for its strong emphasis on engineering, natural sciences, and technology, TUM is highly regarded for its innovative research and academic excellence. It is also recognized for its close ties to industry and its contributions to technological advancements and entrepreneurship. TUM consistently ranks among the top universities in Europe and globally, attracting students and researchers from around the world.
+        </p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('harvardDetails')">See More</button>
+        </div>
+        <div id="harvardDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> TUM offers various scholarships, including need-based and merit-based options for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Ensure you meet the entry requirements for your desired program (undergraduate, graduate, or doctoral).
+                        </li>
+                        <li>For Undergraduate Applicants: High school diploma, proof of German or English language proficiency, CV, passport copy, and application form.
+                        </li>
+                        <li>For Graduate Applicants: Bachelor's degree, academic transcripts, recommendation letters, CV, proof of language proficiency (German or English), motivation letter, and passport copy.
+                        </li>
+                        <li>Some programs may require additional documents such as a portfolio or GRE/GMAT scores.
+                        </li>
+                        <li>Create an account on the TUMonline portal to submit your application. Complete the application form and upload all necessary documents before the deadline.
+                        </li>
+                        <li>For English-taught programs: Provide proof of proficiency through TOEFL, IELTS, or equivalent. For German-taught programs: Provide proof of proficiency through TestDaF, DSH, or equivalent.
+                        </li>
+                        <li>For detailed application information, visit the <a href="https://www.tum.de/en/" target="_blank" style="color: #421dff; text-decoration: underline;">Technical University of Munich</a></li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>International qualifications must be recognized by TUM or assessed through UniAssist.
+                        </li>
+                        <li>For non-EU students, a student visa and proof of financial means are required.
+                        </li>
+                        <li>For undergraduate: Completion of secondary education equivalent to the German Abitur.
+                        </li>
+                        <li>For graduate: A recognized Bachelor's degree or equivalent in the relevant field.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong> 
+                    <ul>
+                        <li>For the Winter Semester: Application opens April 1</li>
+                        <li>For the Summer Semester: Application opens November 1</li>
+                    </ul>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 2: Heidelberg University -->
+    <div class="university-info">
+        <h3>Heidelberg University</h3>
+        <p class="university-description">Heidelberg University, founded in 1386, is Germany's oldest university and one of the leading research institutions in Europe. Located in Heidelberg, it is renowned for its strong programs in the humanities, natural sciences, and medicine. The university has a rich history of academic excellence, with numerous Nobel laureates among its faculty and alumni. Heidelberg University is known for its international atmosphere, diverse student body, and significant contributions to scientific research and innovation.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('stanfordDetails')">See More</button>
+        </div>
+        <div id="stanfordDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> Heidelberg offers a variety of scholarships, including merit-based, need-based, and specific departmental awards.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Select the program (Bachelor’s, Master’s, or PhD) you wish to apply for and check the specific requirements for the program.
+                        </li>
+                        <li>Bachelor’s programs: School leaving certificate, language proficiency proof (German or English), passport copy, CV, and motivation letter (if required).
+                        </li>
+                        <li>Master’s programs: Bachelor’s degree, academic transcripts, recommendation letters, language proficiency, CV, and a letter of motivation.
+                        </li>
+                        <li>For international students, documents may need to be submitted via UniAssist.
+                        </li>
+                        <li>For international students applying through UniAssist, there is usually an application fee.
+                        </li>
+                        <li> After submitting, wait for the decision. You may be called for an interview or asked for additional documents.
+                        </li>
+                        <li>Go visit the official website, visit the <a href="https://www.uni-heidelberg.de/en" target="_blank" style="color: #421dff; text-decoration: underline;">Heidelberg University</a>.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>International qualifications must be recognized by TUM or assessed through UniAssist.
+                        </li>
+                        <li>For non-EU students, a student visa and proof of financial means are required.
+                        </li>
+                        <li>For undergraduate: Completion of secondary education equivalent to the German Abitur.
+                        </li>
+                        <li>For graduate: A recognized Bachelor's degree or equivalent in the relevant field.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong>
+                <ul>
+                    <li>For the Winter Semester: Application opens on May 1</li>
+                    <li>For the Summer Semester: Application opens on November 1</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 3: University of Mannheim -->
+    <div class="university-info">
+        <h3>University of Mannheim</h3>
+        <p class="university-description">The University of Mannheim, founded in 1967, is a prominent public research university located in Mannheim, Germany. Known for its strengths in social sciences, economics, business, and the humanities, it consistently ranks among the top universities in Germany. The university is renowned for its strong international orientation, with numerous partnerships and exchange programs worldwide. With a focus on interdisciplinary research, the University of Mannheim offers a dynamic academic environment and a highly regarded business school.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('mitDetails')">See More</button>
+        </div>
+        <div id="mitDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> University of Mannheim provides a range of scholarships, including merit-based, need-based, and research funding for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Select the program (Bachelor’s, Master’s, or PhD) you wish to apply for and check the specific requirements for the program.
+                        </li>
+                        <li>Bachelor’s programs: School leaving certificate, language proficiency proof (German or English), passport copy, CV, and motivation letter (if required).
+                        </li>
+                        <li>Master’s programs: Bachelor’s degree, academic transcripts, recommendation letters, language proficiency, CV, and a letter of motivation.
+                        </li>
+                        <li>For international students, documents may need to be submitted via UniAssist.
+                        </li>
+                        <li>For international students applying through UniAssist, there is usually an application fee.
+                        </li>
+                        <li> After submitting, wait for the decision. You may be called for an interview or asked for additional documents.
+                        </li>
+                        <li>Go visit the official website, visit the <a href="https://www.uni-mannheim.de/en/" target="_blank" style="color: #421dff; text-decoration: underline;">University of Mannheim</a>.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>International qualifications must be recognized by TUM or assessed through UniAssist.
+                        </li>
+                        <li>For non-EU students, a student visa and proof of financial means are required.
+                        </li>
+                        <li>For undergraduate: Completion of secondary education equivalent to the German Abitur.
+                        </li>
+                        <li>For graduate: A recognized Bachelor's degree or equivalent in the relevant field.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong>
+                <ul>
+                    <li>For the Winter Semester: Application opens on May 1</li>
+                    <li>For the Summer Semester: Application opens on November 1</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- University 4: Freie Universität Berlin -->
+    <div class="university-info">
+        <h3>Freie Universität Berlin</h3>
+        <p class="university-description">Freie Universität Berlin, founded in 1948, is one of Germany's leading research universities, located in the southwest of Berlin. Known for its excellence in the humanities, social sciences, and natural sciences, it offers a wide range of interdisciplinary programs. The university has a strong international reputation, with numerous global partnerships and research collaborations. Freie Universität Berlin is known for its focus on innovation, critical thinking, and fostering a diverse academic community. Its central location in Berlin also offers students access to a vibrant cultural and intellectual environment.</p>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleDetails('berkeleyDetails')">See More</button>
+        </div>
+        <div id="berkeleyDetails" class="university-details">
+            <ul>
+                <li><strong>Opportunities:</strong> FUB Berkeley offers a variety of scholarships, including merit-based scholarships, financial aid, and fellowships for international students.</li>
+                <li><strong>Application Process:</strong>
+                    <ul>
+                        <li>Select the program (Bachelor’s, Master’s, or PhD) you wish to apply for and check the specific requirements for the program.
+                        </li>
+                        <li>Bachelor’s programs: School leaving certificate, language proficiency proof (German or English), passport copy, CV, and motivation letter (if required).
+                        </li>
+                        <li>Master’s programs: Bachelor’s degree, academic transcripts, recommendation letters, language proficiency, CV, and a letter of motivation.
+                        </li>
+                        <li>For international students, documents may need to be submitted via UniAssist.
+                        </li>
+                        <li>For international students applying through UniAssist, there is usually an application fee.
+                        </li>
+                        <li> After submitting, wait for the decision. You may be called for an interview or asked for additional documents.
+                        </li>
+                        <li>Go visit the official website, visit the <a href="https://www.fu-berlin.de/en/index.html" target="_blank" style="color: #421dff; text-decoration: underline;">Freie Universität Berlin</a>.</li>
+                    </ul>
+                </li>
+                <li><strong>Eligibility Criteria:</strong> 
+                    <ul>
+                        <li>International qualifications must be recognized by TUM or assessed through UniAssist.
+                        </li>
+                        <li>For non-EU students, a student visa and proof of financial means are required.
+                        </li>
+                        <li>For undergraduate: Completion of secondary education equivalent to the German Abitur.
+                        </li>
+                        <li>For graduate: A recognized Bachelor's degree or equivalent in the relevant field.</li>
+                    </ul>
+                </li>
+                <li><strong>Status:</strong>
+                <ul>
+                    <li>For the Winter Semester: Application opens on May 1</li>
+                    <li>For the Summer Semester: Application opens on November 1</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="info">For further details and information kindly chat with our AI assisstant</p>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Germany Universities & Study Opportunities. All rights reserved. | 
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p>Contact us: <a href="mailto:contact@germanyuniversities.com">contact@germanyuniversities.com</a> | 
+            Phone: <a href="tel:+61412345678">+61 412 345 678</a></p>
+    </footer>
+
+    <script>
+        function toggleDetails(universityId) {
+            const details = document.getElementById(universityId);
+            const button = details.previousElementSibling.children[0];
+            
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                details.classList.add('show');
+                button.innerText = "See Less";
+            } else {
+                details.style.display = "none";
+                details.classList.remove('show');
+                button.innerText = "See More";
+            }
+        }
+    </script>
+
+</body>
+</html>
