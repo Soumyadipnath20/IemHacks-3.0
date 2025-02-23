@@ -100,7 +100,7 @@
         }
 
         nav li a:hover {
-            background-color: #cf71a6;
+            
             transform: scale(1.1);
         }
 
@@ -112,6 +112,14 @@
             animation: fadeIn 2s ease-out 1s forwards; /* Fade-in effect for sections */
         }
 
+        .destinations-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
         .destination {
             display: inline-block;
             margin: 20px;
@@ -120,26 +128,29 @@
             border-radius: 10px;
             background-color: #abe1f2;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer; /* Ensure the destinations are clickable */
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        .destinations-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 30px;
+        .destination img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.3s ease;
         }
 
-        .destination h3 {
-            font-size: 24px;
-            color: #b41b6f;
+        .destination:hover img {
+            transform: scale(1.1);
         }
 
-        .destination p {
-            font-size: 16px;
-            color: #555;
-            font-weight: bold;
+        .destination:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
+
 
         /* Button Styles */
         button {
@@ -175,8 +186,8 @@
         }
 
 
-           /* Feedback Form Styles */
-        .feedback-form {
+         /* Feedback Form Styles */
+         .feedback-form {
             background-color: white;
             padding: 25px;
             border-radius: 12px;
@@ -186,6 +197,89 @@
             animation: fadeIn 2s ease-out 1s forwards;
             overflow: hidden;
         }
+
+
+        .feedback-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .feedback-form::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: #ffcc00;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .feedback-form h2 {
+            color: #b85e90;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #b85e90;
+            color: #b85e90;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .circle:hover {
+            background-color: #b85e90;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feedback-form button {
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .feedback-form button:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
 
         .feedback-form input,
         .feedback-form textarea,
@@ -200,74 +294,38 @@
         }
 
         .rating {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  font-size: 20px;
-}
-
-.circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.circle:hover {
-  background-color: #ffcc00; /* Highlight on hover */
-  border-color: #ffcc00; /* Highlight border color */
-}
-
-#apply{
-    transform: scale(1.05);
-}
-
-.selected {
-  background-color: #ffcc00;
-  border-color: #ffcc00;
-  color: white;
-}
-
-#selected-rating {
-  font-weight: bold;
-  font-size: 24px;
-  color: #ffcc00;
-}
-
-
-
-
-        .feedback-form textarea {
-            resize: vertical;
-            height: 120px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 20px;
         }
 
-        /* Feedback Type Dropdown */
-        .feedback-form select {
+        .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
             cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
-        .feedback-form button {
-            background-color: #b85e90;
-            border: none;
+        .circle:hover {
+            background-color: #ffcc00;
+            border-color: #ffcc00;
+        }
+
+        .selected {
+            background-color: #ffcc00;
+            border-color: #ffcc00;
             color: white;
-            padding: 12px 30px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 8px;
-            width: 100%;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .feedback-form button:hover {
             background-color: #cf71a6;
-            transform: scale(0.95); /* Shrinks the button on hover */
+            transform: scale(0.95);
         }
 
         .form-row {
