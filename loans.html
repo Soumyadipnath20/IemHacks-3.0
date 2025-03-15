@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Loans for Studying Abroad</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-in-out;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: white;
+            color: #4facfe;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #f1f1f1;
+        }
+        .loan-details {
+            display: none;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <h2>Education Loans for Studying Abroad</h2>
+    <div class="container">
+        <label for="country">Select a Country:</label>
+        <select id="country">
+            <option value="">-- Choose Country --</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+            <option value="australia">Australia</option>
+            <option value="ireland">Ireland</option>
+        </select>
+        <button onclick="showLoanDetails()">Get Loan Details</button>
+        <div id="loan-info" class="loan-details"></div>
+    </div>
+    <script>
+        function showLoanDetails() {
+            const country = document.getElementById("country").value;
+            const loanInfo = document.getElementById("loan-info");
+            
+            const loanData = {
+                usa: "<strong>USA Loan Details:</strong><br>Federal and private loans available. Interest rates range from 3% to 9%.<br><br><strong>How to Apply:</strong><br>1. Fill out the FAFSA form for federal loans.<br>2. Research private lenders like Sallie Mae, Discover, Prodigy Finance.<br>3. Provide proof of admission, credit history, and cosigner details.<br><a href='https://studentaid.gov/' target='_blank'>Apply Here</a>",
+                uk: "<strong>UK Loan Details:</strong><br>Government-backed student loans available. Interest rates vary.<br><br><strong>How to Apply:</strong><br>1. Apply through Student Finance England for government loans.<br>2. Research private loans from banks like HSBC, Barclays.<br>3. Submit proof of university admission and financial documents.<br><a href='https://www.gov.uk/student-finance' target='_blank'>Apply Here</a>",
+                germany: "<strong>Germany Loan Details:</strong><br>Low-interest student loans and tuition-free public universities.<br><br><strong>How to Apply:</strong><br>1. Check DAAD and KfW student loans.<br>2. Ensure you have a blocked account with sufficient funds.<br>3. Submit proof of university admission and financial stability.<br><a href='https://www.kfw.de/' target='_blank'>Apply Here</a>",
+                france: "<strong>France Loan Details:</strong><br>Banks like BNP Paribas and Société Générale offer student loans with interest rates around 1-3%.<br><br><strong>How to Apply:</strong><br>1. Approach French banks for student loan options.<br>2. Provide university admission proof and income details.<br>3. Some banks may require a guarantor.<br><a href='https://www.bnpparibas.com/' target='_blank'>Apply Here</a>",
+                australia: "<strong>Australia Loan Details:</strong><br>HECS-HELP and FEE-HELP government loans available. Private loans from ANZ and Commonwealth Bank.<br><br><strong>How to Apply:</strong><br>1. Apply for government HELP schemes if eligible.<br>2. Research private loans from Australian banks.<br>3. Submit university admission proof and credit history.<br><a href='https://www.studyassist.gov.au/' target='_blank'>Apply Here</a>",
+                ireland: "<strong>Ireland Loan Details:</strong><br>Education loans from Bank of Ireland and AIB with interest rates around 5-8%.<br><br><strong>How to Apply:</strong><br>1. Check student loan options at local banks.<br>2. Provide proof of admission, income, and a cosigner if required.<br>3. Ensure you meet eligibility criteria for repayment plans.<br><a href='https://personal.aib.ie/our-products/loans/education-loans' target='_blank'>Apply Here</a>"
+            };
+            
+            if (country && loanData[country]) {
+                loanInfo.innerHTML = loanData[country];
+                loanInfo.style.display = "block";
+            } else {
+                loanInfo.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
