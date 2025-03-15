@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Calculator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        select, input {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        button {
+            background-color: #ff7eb3;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff5277;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Expenses Calculator</h2>
+        <label for="country">Select Country:</label>
+        <select id="country" onchange="setDefaultExpenses()">
+            <option value="1" data-food="300" data-transport="100" data-rent="1200" data-misc="200">🇺🇸 USA</option>
+            <option value="0.91" data-food="250" data-transport="80" data-rent="1000" data-misc="180">🇫🇷 France</option>
+            <option value="0.92" data-food="260" data-transport="90" data-rent="1100" data-misc="190">🇩🇪 Germany</option>
+            <option value="0.78" data-food="280" data-transport="95" data-rent="1150" data-misc="210">🇬🇧 UK</option>
+            <option value="1.52" data-food="320" data-transport="120" data-rent="1300" data-misc="250">🇦🇺 Australia</option>
+            <option value="0.95" data-food="270" data-transport="85" data-rent="1050" data-misc="200">🇮🇪 Ireland</option>
+        </select>
+        <input type="number" id="food" placeholder="Food Expenses ($)">
+        <input type="number" id="transport" placeholder="Transport Expenses ($)">
+        <input type="number" id="rent" placeholder="Rent Expenses ($)">
+        <input type="number" id="misc" placeholder="Miscellaneous Expenses ($)">
+        <button onclick="calculateExpenses()">Calculate</button>
+        <h3>Total: <span id="total">0</span> <span id="currency"></span></h3>
+        <h4>Converted to USD: $<span id="converted">0</span></h4>
+    </div>
+    <script>
+        function setDefaultExpenses() {
+            let country = document.getElementById("country");
+            let selectedOption = country.options[country.selectedIndex];
+            document.getElementById("food").value = selectedOption.getAttribute("data-food");
+            document.getElementById("transport").value = selectedOption.getAttribute("data-transport");
+            document.getElementById("rent").value = selectedOption.getAttribute("data-rent");
+            document.getElementById("misc").value = selectedOption.getAttribute("data-misc");
+            document.getElementById("currency").innerText = selectedOption.text.split(' ')[0];
+        }
+
+        function calculateExpenses() {
+            let countryRate = parseFloat(document.getElementById("country").value);
+            let food = parseFloat(document.getElementById("food").value) || 0;
+            let transport = parseFloat(document.getElementById("transport").value) || 0;
+            let rent = parseFloat(document.getElementById("rent").value) || 0;
+            let misc = parseFloat(document.getElementById("misc").value) || 0;
+            
+            let total = food + transport + rent + misc;
+            let converted = total / countryRate;
+            
+            document.getElementById("total").innerText = total.toFixed(2);
+            document.getElementById("converted").innerText = converted.toFixed(2);
+        }
+    </script>
+</body>
+</html>
