@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Maker</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #FF80AB, #ff75a5); /* Soft pink gradient */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            transition: all 0.3s ease-in-out;
+            overflow: auto; /* Fix overflow */
+            height: 100%; /* Allow container to adjust to form size */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            color: #F50057; /* Deep pink for header */
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            margin-bottom: 20px; /* Increased margin for spacing */
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: border 0.3s ease-in-out;
+            background-color: #f7f7f7;
+            resize: vertical; /* Allow text area to be resizable */
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #F50057; /* Focus border color */
+            outline: none;
+            background-color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: #F50057; /* Button color */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #D50047; /* Darker pink on hover */
+        }
+
+        .result {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #F50057; /* Border matching button color */
+            display: none;
+        }
+
+        .result h3 {
+            color: #F50057; /* Deep pink for the result header */
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .result p {
+            line-height: 1.8;
+            color: #444;
+            font-size: 16px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            input[type="text"],
+            textarea {
+                padding: 12px;
+            }
+
+            button {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Statement of Purpose (SOP) Maker</h1>
+        <form id="sop-form">
+            <label for="name">Your Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="program">Program you're applying for:</label>
+            <input type="text" id="program" placeholder="e.g., Master's in Computer Science" required>
+
+            <label for="background">Your academic background (e.g., undergraduate degree):</label>
+            <input type="text" id="background" placeholder="e.g., B.Sc. in Computer Science" required>
+
+            <label for="goals">Why do you want to pursue this program? (Your goals and aspirations):</label>
+            <textarea id="goals" rows="4" placeholder="Enter your motivation for applying" required></textarea>
+
+            <label for="experience">Relevant work experience or internships (if any):</label>
+            <textarea id="experience" rows="4" placeholder="Enter your relevant work experience" required></textarea>
+
+            <label for="university">Why did you choose this university?</label>
+            <textarea id="university" rows="4" placeholder="Explain your choice of university and program" required></textarea>
+
+            <label for="future">What are your future career plans?</label>
+            <textarea id="future" rows="4" placeholder="Explain your long-term goals and career plans" required></textarea>
+
+            <button type="button" onclick="generateSOP()">Generate SOP</button>
+        </form>
+
+        <div class="result" id="sop-result" style="display: none;">
+            <h3>Your SOP:</h3>
+            <p id="sop-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function generateSOP() {
+            // Get user input
+            const name = document.getElementById('name').value;
+            const program = document.getElementById('program').value;
+            const background = document.getElementById('background').value;
+            const goals = document.getElementById('goals').value;
+            const experience = document.getElementById('experience').value;
+            const university = document.getElementById('university').value;
+            const future = document.getElementById('future').value;
+
+            // Create SOP template
+            const sopText = `
+                My name is ${name}, and I am applying for the ${program} program. I have completed my undergraduate degree in ${background}.
+                
+                I have always been passionate about ${goals}. This program aligns perfectly with my aspirations to expand my knowledge and skills in this field. The advanced curriculum and research opportunities offered by the university will help me achieve my academic and professional goals.
+
+                During my academic journey, I gained valuable insights through various projects and internships. Specifically, my experience with ${experience} has prepared me for the challenges and opportunities in this field. It has motivated me to pursue further studies and deepen my understanding of ${program}.
+
+                The reason I chose this university is because of its excellent reputation in the field of ${program}, its experienced faculty, and the state-of-the-art resources it offers. I am particularly excited about the opportunity to work with professors and researchers who share my interests.
+
+                After completing this program, I intend to pursue a career in ${future}. I believe this program will provide me with the knowledge, skills, and network needed to succeed in the industry and contribute meaningfully to my chosen field.
+            `;
+
+            // Display SOP result
+            document.getElementById('sop-text').textContent = sopText;
+            document.getElementById('sop-result').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
