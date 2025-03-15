@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter of Recommendation (LOR) Maker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #FF80AB, #F50057); /* Soft pink gradient */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            transition: all 0.3s ease-in-out;
+            overflow: auto; /* Fix overflow */
+            height: 100%; /* Allow container to adjust to form size */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            color: #F50057; /* Deep pink for header */
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            margin-bottom: 20px; /* Increased margin for spacing */
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: border 0.3s ease-in-out;
+            background-color: #f7f7f7;
+            resize: vertical; /* Allow text area to be resizable */
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #F50057; /* Focus border color */
+            outline: none;
+            background-color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: #F50057; /* Button color */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #D50047; /* Darker pink on hover */
+        }
+
+        .result {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #F50057; /* Border matching button color */
+            display: none;
+        }
+
+        .result h3 {
+            color: #F50057; /* Deep pink for the result header */
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .result p {
+            line-height: 1.8;
+            color: #444;
+            font-size: 16px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            input[type="text"],
+            textarea {
+                padding: 12px;
+            }
+
+            button {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Letter of Recommendation (LOR) Maker</h1>
+        <form id="lor-form">
+            <label for="recommender-name">Recommender's Name:</label>
+            <input type="text" id="recommender-name" placeholder="Enter the recommender's full name" required>
+
+            <label for="recommender-position">Recommender's Position/Designation:</label>
+            <input type="text" id="recommender-position" placeholder="Enter the recommender's position" required>
+
+            <label for="applicant-name">Applicant's Name:</label>
+            <input type="text" id="applicant-name" placeholder="Enter the applicant's name" required>
+
+            <label for="relationship">Relationship with Applicant:</label>
+            <textarea id="relationship" rows="4" placeholder="Describe the relationship between the recommender and the applicant" required></textarea>
+
+            <label for="reason">Reason for Recommending:</label>
+            <textarea id="reason" rows="4" placeholder="Why is the applicant being recommended?" required></textarea>
+
+            <label for="skills">Applicant's Skills and Qualities:</label>
+            <textarea id="skills" rows="4" placeholder="What skills or qualities make the applicant suitable for the program/job?" required></textarea>
+
+            <label for="additional-comments">Additional Comments (Optional):</label>
+            <textarea id="additional-comments" rows="4" placeholder="Any additional comments about the applicant"></textarea>
+
+            <button type="button" onclick="generateLOR()">Generate LOR</button>
+        </form>
+
+        <div class="result" id="lor-result">
+            <h3>Your LOR:</h3>
+            <p id="lor-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function generateLOR() {
+            // Get user input
+            const recommenderName = document.getElementById('recommender-name').value;
+            const recommenderPosition = document.getElementById('recommender-position').value;
+            const applicantName = document.getElementById('applicant-name').value;
+            const relationship = document.getElementById('relationship').value;
+            const reason = document.getElementById('reason').value;
+            const skills = document.getElementById('skills').value;
+            const additionalComments = document.getElementById('additional-comments').value;
+
+            // Create LOR template
+            const lorText = `
+                [Recommender's Letterhead or Name and Address (Optional)]
+                
+                Date: [Insert Date]
+
+                To Whom It May Concern,
+
+                I, ${recommenderName}, hold the position of ${recommenderPosition}. It is with great pleasure that I write this letter of recommendation for ${applicantName}, who I have had the privilege of knowing as [describe relationship with applicant: e.g., student, employee, intern].
+
+                In my experience working with ${applicantName}, I have been thoroughly impressed by their [reason for recommending the applicant, e.g., strong work ethic, intellectual curiosity, etc.]. They have consistently demonstrated their ability to [skills or qualities]. 
+
+                Some of the key strengths I have observed in ${applicantName} include their [mention key skills or attributes, e.g., problem-solving skills, leadership abilities, communication skills]. I am confident that these qualities will serve them well in any future academic or professional pursuits.
+
+                Furthermore, ${applicantName} has shown a great deal of dedication and enthusiasm in their work and interactions. [Additional comments or notable achievements].
+
+                I highly recommend ${applicantName} without reservation and believe they will be a valuable asset to any institution or organization they join.
+
+                Please feel free to contact me if you require any further information or clarification.
+
+                Sincerely,
+                
+                ${recommenderName}
+                ${recommenderPosition}
+            `;
+
+            // Display LOR result
+            document.getElementById('lor-text').textContent = lorText;
+            document.getElementById('lor-result').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
